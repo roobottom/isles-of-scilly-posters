@@ -1,0 +1,26 @@
+{
+  "name": "isles-of-scilly-posters",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "watch:server": "nodemon server",
+    "watch-css": "node compile-less.js --watch",
+    "css": "node compile-less.js",
+    "dev": "concurrently \"npm run watch-css\" \"npm run watch:server\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "compression": "^1.8.1",
+    "concurrently": "^9.2.1",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "less": "^4.4.1",
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.10",
+    "nunjucks": "^3.2.4"
+  }
+}
