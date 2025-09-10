@@ -4,6 +4,7 @@ const nunjucks = require('nunjucks');
 const cookieParser = require('cookie-parser');
 const filters = require('./lib/filters');
 const path = require('path');
+const posters = require('./src/data/posters');
 
 //network monitoring & rate limiting
 const morgan = require('morgan');
@@ -53,8 +54,13 @@ staticDirectories.forEach(staticDir => {
 });
 
 //routes
-app.get('/', (req, res) => {
-  res.render('pages/home', { title: 'Home' });
+posters.forEach(poster => {
+  app.get(poster.slug, (req, res) => {
+    res.render(`pages/${poster.page}`, {
+      title: poster.title,
+      description: poster.description
+    });
+  });
 });
 
 //serve the app
