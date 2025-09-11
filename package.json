@@ -12,7 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "chokidar": "^4.0.3",
+    "chokidar": "^3.6.0",
     "compression": "^1.8.1",
     "concurrently": "^9.2.1",
     "cookie-parser": "^1.4.7",
@@ -22,5 +22,10 @@
     "morgan": "^1.10.1",
     "nodemon": "^3.1.10",
     "nunjucks": "^3.2.4"
+  },
+  "overrides": {
+    "nunjucks": {
+      "chokidar": "^3.2.4"
+    }
   }
 }
